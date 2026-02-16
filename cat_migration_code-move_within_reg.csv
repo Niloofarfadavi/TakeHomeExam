@@ -1,0 +1,10 @@
+category,count,pct
+Nonmover,2064,82.85828984343637
+Same county,249,9.995985547972701
+Different county same state,65,2.609393817743878
+Not in universe,32,1.2846246487354476
+Different state in South,29,1.1641910879164994
+Different state in Northeast,14,0.5620232838217584
+Abroad,14,0.5620232838217584
+Different state in Midwest,12,0.48173424327579284
+Different state in West,12,0.48173424327579284

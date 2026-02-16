@@ -1,0 +1,88 @@
+
+SEGMENT 0: Young Mass-Market General-Education
+====================================================================================================
+Size: 1,565 customers (31.3% of total)
+
+Demographics:
+  - Average Age: 11 years
+  - Gender: 50% Male, 50% Female
+  - Marital Status: 0% Married
+  - Education: 0% have Bachelor's degree or higher
+
+Economic Characteristics:
+  - Income: 0.0% earn over $50,000 annually
+  - Capital Income: 1% have investment income
+  - Average Capital Gains: $0
+  - Average Dividends: $1
+
+Employment:
+  - Full-time Employment: 1%
+  - Average Weeks Worked: 1.4 weeks/year
+  - Average Employers: 0.2
+
+
+SEGMENT 1: Established Moderate-Income General-Education
+====================================================================================================
+Size: 1,030 customers (20.6% of total)
+
+Demographics:
+  - Average Age: 60 years
+  - Gender: 32% Male, 68% Female
+  - Marital Status: 65% Married
+  - Education: 10% have Bachelor's degree or higher
+
+Economic Characteristics:
+  - Income: 1.4% earn over $50,000 annually
+  - Capital Income: 15% have investment income
+  - Average Capital Gains: $161
+  - Average Dividends: $358
+
+Employment:
+  - Full-time Employment: 2%
+  - Average Weeks Worked: 3.2 weeks/year
+  - Average Employers: 0.3
+
+
+SEGMENT 2: Mid-Career Moderate-Income Educated
+====================================================================================================
+Size: 2,305 customers (46.1% of total)
+
+Demographics:
+  - Average Age: 39 years
+  - Gender: 51% Male, 49% Female
+  - Marital Status: 64% Married
+  - Education: 25% have Bachelor's degree or higher
+
+Economic Characteristics:
+  - Income: 10.6% earn over $50,000 annually
+  - Capital Income: 21% have investment income
+  - Average Capital Gains: $904
+  - Average Dividends: $184
+
+Employment:
+  - Full-time Employment: 42%
+  - Average Weeks Worked: 47.8 weeks/year
+  - Average Employers: 4.0
+
+
+SEGMENT 3: Mid-Career Affluent Highly-Educated
+====================================================================================================
+Size: 100 customers (2.0% of total)
+
+Demographics:
+  - Average Age: 45 years
+  - Gender: 62% Male, 38% Female
+  - Marital Status: 54% Married
+  - Education: 37% have Bachelor's degree or higher
+
+Economic Characteristics:
+  - Income: 27.0% earn over $50,000 annually
+  - Capital Income: 21% have investment income
+  - Average Capital Gains: $0
+  - Average Dividends: $406
+
+Employment:
+  - Full-time Employment: 34%
+  - Average Weeks Worked: 40.1 weeks/year
+  - Average Employers: 3.4
+
