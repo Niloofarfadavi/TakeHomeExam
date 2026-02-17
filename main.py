@@ -173,7 +173,7 @@ df = df.drop(columns=medium_card_features)
 high_card_features = [
     "major industry code",
     "detailed household and family stat",
-    "country of birth self",
+    "country of birth self"
     "country of birth father",
     "country of birth mother",
     "detailed occupation recode",
