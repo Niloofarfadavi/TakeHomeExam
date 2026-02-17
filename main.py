@@ -453,8 +453,7 @@ axes[2].set_xticks(K_range)
 axes[2].legend()
 
 plt.tight_layout()
-plt.savefig('data/cluster_optimization.png', dpi=300, bbox_inches='tight')
-print("\nCluster optimization plot saved: data/cluster_optimization.png")
+
 plt.close()
 
 # Choose final K (you can adjust this based on business needs)
@@ -525,8 +524,7 @@ print("=" * 100)
 print(df_profiles.round(1).to_string(index=False))
 
 # Save profiles
-df_profiles.to_csv('data/segment_profiles.csv', index=False)
-print("\nSegment profiles saved: data/segment_profiles.csv")
+
 
 # =============================================================================
 # STEP 5: SEGMENT CHARACTERIZATION (Give descriptive names)
@@ -601,133 +599,4 @@ Employment:
     segment_descriptions.append(description)
     print(description)
 
-# Save segment names and descriptions
-with open('data/segment_descriptions.txt', 'w') as f:
-    for desc in segment_descriptions:
-        f.write(desc + '\n')
-
-print("\nSegment descriptions saved: data/segment_descriptions.txt")
-
-# =============================================================================
-# STEP 6: MARKETING RECOMMENDATIONS BY SEGMENT
-# =============================================================================
-print("\n" + "=" * 100)
-print("MARKETING RECOMMENDATIONS BY SEGMENT")
-print("=" * 100)
-
-marketing_recommendations = []
-
-for i in range(FINAL_K):
-    profile = segment_profiles[i]
-
-    print(f"\n{'=' * 100}")
-    print(f"SEGMENT {i}: {segment_names[i]}")
-    print(f"{'=' * 100}")
-    print(f"Size: {profile['Size']:,} customers ({profile['Size_Pct']:.1f}% of total)")
-
-    # Determine marketing strategy based on segment characteristics
-    age = profile['Avg_Age']
-    income_pct = profile['Pct_Income50K']
-    capital_pct = profile['Pct_HasCapital']
-    education_pct = profile['Pct_HighEd']
-    employed_pct = profile['Pct_FullTime']
-
-    print(f"\nKey Characteristics:")
-    print(f"  - Average Age: {age:.0f} years")
-    print(f"  - {income_pct:.1f}% earn over $50,000")
-    print(f"  - {capital_pct:.0f}% have investment income")
-    print(f"  - {education_pct:.0f}% have Bachelor's degree or higher")
-    print(f"  - {employed_pct:.0f}% employed full-time")
-
-    print(f"\nMarketing Strategy:")
-
-    # Children/Youth segment
-    if age < 20:
-        strategy = "YOUTH/FAMILY SEGMENT"
-        products = ["Educational products", "Children's services", "Family packages", "Youth programs"]
-        channels = ["Parents (email, social media)", "Schools", "Family events"]
-        messaging = ["Family-friendly", "Educational value", "Safe and trusted"]
-
-    # Seniors/Retirees
-    elif age > 55:
-        strategy = "SENIOR/RETIREMENT SEGMENT"
-        products = ["Retirement planning", "Health insurance", "Travel packages", "Fixed-income products"]
-        channels = ["Traditional mail", "Email", "Phone", "Community centers"]
-        messaging = ["Security", "Comfort", "Peace of mind", "Reliability"]
-
-    # High-income professionals
-    elif income_pct > 20 or capital_pct > 20:
-        strategy = "PREMIUM/AFFLUENT SEGMENT"
-        products = ["Premium services", "Investment products", "Luxury goods", "Wealth management"]
-        channels = ["Personalized email", "Direct mail", "VIP events", "Account managers"]
-        messaging = ["Exclusivity", "Quality", "Status", "Premium experience"]
-
-    # Working professionals
-    else:
-        strategy = "WORKING PROFESSIONAL SEGMENT"
-        products = ["Career services", "Practical financial products", "Convenience services", "Value offerings"]
-        channels = ["Email", "Mobile apps", "Social media", "Online platforms"]
-        messaging = ["Convenience", "Efficiency", "Value", "Work-life balance"]
-
-    print(f"  ** {strategy} **")
-    print(f"\n  Recommended Products:")
-    for p in products:
-        print(f"    - {p}")
-
-    print(f"\n  Recommended Channels:")
-    for c in channels:
-        print(f"    - {c}")
-
-    print(f"\n  Key Messaging Themes:")
-    for m in messaging:
-        print(f"    - {m}")
-
-    # Cross-sell opportunities
-    print(f"\n  Cross-Sell Opportunities:")
-    cross_sells = []
-
-    if capital_pct > 10:
-        cross_sells.append("Investment advisory services")
-        cross_sells.append("Tax optimization services")
-
-    if profile['Pct_Married'] > 50:
-        cross_sells.append("Family insurance products")
-        cross_sells.append("Joint account services")
-
-    if education_pct > 20:
-        cross_sells.append("Professional development programs")
-        cross_sells.append("Premium tech products")
-
-    if employed_pct > 30:
-        cross_sells.append("Workplace benefits programs")
-        cross_sells.append("Commuter services")
-
-    if age > 55:
-        cross_sells.append("Estate planning services")
-        cross_sells.append("Healthcare products")
-
-    if not cross_sells:
-        cross_sells.append("General loyalty programs")
-        cross_sells.append("Referral incentives")
-
-    for cs in cross_sells:
-        print(f"    - {cs}")
-
-    # Save recommendation
-    marketing_recommendations.append({
-        'Segment': i,
-        'Name': segment_names[i],
-        'Size': profile['Size'],
-        'Strategy': strategy,
-        'Products': ', '.join(products),
-        'Channels': ', '.join(channels),
-        'Messaging': ', '.join(messaging)
-    })
-
-# Save marketing recommendations
-df_marketing = pd.DataFrame(marketing_recommendations)
-df_marketing.to_csv('data/marketing_recommendations.csv', index=False)
-print("\n" + "=" * 100)
-print("Marketing recommendations saved: data/marketing_recommendations.csv")
-print("=" * 100)
 
